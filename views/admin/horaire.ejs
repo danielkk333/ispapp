@@ -28,7 +28,10 @@
               <td data-title="Date"><%= item.date %></td>
 
               <td data-title="Action">
-                <a href="" class="btn btn-success">
+                <a
+                  href="/admin/delete_horaire/<%= item._id %>"
+                  class="btn btn-success"
+                >
                   <i class="ti-trash" style="margin-right: 5px"></i>Effacer</a
                 >
               </td>

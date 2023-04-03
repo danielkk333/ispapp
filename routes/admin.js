@@ -170,7 +170,7 @@ router.post("/save_horaire", verify, saveHoraire);
 router.post("/update_horaire"), updateHoraire;
 
 //delete horaire
-router.post("/delete_course/:id", deleteHoraire);
+router.get("/delete_horaire/:id", deleteHoraire);
 
 //get prof
 router.get("/prof", verify, getAllProf);
@@ -184,13 +184,13 @@ router.get("/nouveau_prof", verify, (req, res) => {
 });
 
 //save prof
-router.post("/save_horaire", verify, saveProf);
+router.post("/save_prof", verify, saveProf);
 
 //update prof
-router.post("/update_horaire", updateProf);
+router.post("/update_prof", updateProf);
 
 //delete prof
-router.post("/delete_prof/:id", deleteProf);
+router.get("/delete_prof/:id", deleteProf);
 
 //
 //
@@ -203,6 +203,7 @@ router.get("/nouvelle_communication", verify, (req, res) => {
 
 //lire une communication
 router.get("/lire/:id", async (req, res) => {
+  const id = req.params.id;
   const com = await Communication.findOne({ _id: id });
   if (com) {
     res.render("admin/lireCom", { user: req.session.loggedin, com });
@@ -221,8 +222,16 @@ router.post("/update_communication", verify, updateCom);
 //delete communication
 router.get("/delete_communication/:id", verify, deleteCom);
 
-router.get("/profil", verify, (req, res) => {
-  res.render("admin/profil", { user: req.session.loggedin });
+router.get("/profil", verify, async (req, res) => {
+  const user = req.session.loggedin;
+  const profil = await User.findOne({ _id: user._id });
+  if (profil) {
+    res.render("admin/profil", { user, profil });
+  } else {
+    res.render("admin/profil", { user, profil: {} });
+  }
 });
+
+router.post("/update_profil", updateEtudiant);
 
 module.exports = router;

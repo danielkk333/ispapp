@@ -1,4 +1,5 @@
 const User = require("../../models/user");
+const bcrypt = require("bcrypt");
 
 exports.getAllEtudiant = async (req, res) => {
   const etudiants = await User.find({ role: "etudiant" })
@@ -12,6 +13,7 @@ exports.searchEtudiant = async (req, res) => {
   if (section) {
     const etudiants = await User.find({
       $and: [
+        { role: { $not: { $regex: "admin" } } },
         {
           $or: [
             { nom: req.body.search },
@@ -31,6 +33,7 @@ exports.searchEtudiant = async (req, res) => {
   } else if (section && departement) {
     const etudiants = await User.find({
       $and: [
+        { role: { $not: { $regex: "admin" } } },
         {
           $or: [
             { nom: req.body.search },
@@ -50,6 +53,7 @@ exports.searchEtudiant = async (req, res) => {
   } else if (section && departement && promotion) {
     const etudiants = await User.find({
       $and: [
+        { role: { $not: { $regex: "admin" } } },
         {
           $or: [
             { nom: req.body.search },
@@ -70,10 +74,15 @@ exports.searchEtudiant = async (req, res) => {
     }
   } else {
     const etudiants = await User.find({
-      $or: [
-        { nom: req.body.search },
-        { postnom: req.body.search },
-        { prenom: req.body.search },
+      $and: [
+        { role: { $not: { $regex: "admin" } } },
+        {
+          $or: [
+            { nom: req.body.search },
+            { postnom: req.body.search },
+            { prenom: req.body.search },
+          ],
+        },
       ],
     });
     if (etudiants.length == 0) {
@@ -122,16 +131,38 @@ exports.suspendreEtudiant = async (req, res) => {
 // };
 
 exports.updateEtudiant = async (req, res) => {
-  const id = req.params.id;
-  const data = req.body;
-  const etudiant = await User.find({ _id: id });
+  const salt = await bcrypt.genSalt(10);
+  const hashedPass = await bcrypt.hash(req.body.password, salt);
+  const id = req.body.id;
+  const etudiant = await User.findOne({ _id: id });
   if (etudiant) {
-    await User.updateOne({ _id: id }, { $set: { data } }, { new: true });
-    req.flash("success_msg", "Vous avez mis à jour l'etudiant " + etudiant.nom);
-    res.redirect("/admin/etudiants");
+    await User.updateOne(
+      { _id: id },
+      {
+        $set: {
+          nom: req.body.nom,
+          postnom: req.body.postnom,
+          prenom: req.body.prenom,
+          username: req.body.username,
+          tel: req.body.tel,
+          adresse: req.body.adresse,
+          mail: req.body.mail,
+          password: hashedPass,
+        },
+      },
+      { new: true }
+    )
+      .then(() => {
+        req.flash("success_msg", "Vous avez mis à jour votre compte ");
+        res.redirect("/admin/profil");
+      })
+      .catch((err) => {
+        req.flash("error_msg", "Erreur");
+        res.status(200).redirect("/admin/profil");
+      });
   } else {
     req.flash("error_msg", "Erreur");
-    res.redirect("/admin/editer_etudiant");
+    res.redirect("/admin/profil");
   }
 };
 

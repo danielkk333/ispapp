@@ -10,7 +10,6 @@ const communicationSchema = new mongoose.Schema({
   },
   date: {
     type: String,
-    default: Date.now,
   },
 });
 

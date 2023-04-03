@@ -49,7 +49,7 @@ exports.deleteHoraire = async (req, res) => {
   if (cours) {
     await Horaire.deleteOne({ _id: cours._id });
     req.flash("success_msg", "Vous avez effacé un cours avec succes");
-    res.redirect("/admin/cours");
+    res.redirect("/admin/horaire");
   } else {
     req.flash("error_msg", "Non authorisé");
     res.redirect("/admin/horaire");

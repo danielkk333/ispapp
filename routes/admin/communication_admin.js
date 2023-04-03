@@ -2,14 +2,14 @@ const Communication = require("../../models/communication");
 
 exports.getAllCom = async (req, res) => {
   const com = await Communication.find().sort({ _id: -1 });
-  res.render("admin/communication", { user: req.session.loggedin, com, com });
+  res.render("admin/communication", { user: req.session.loggedin, com });
 };
 
 exports.saveCom = async (req, res) => {
   const { titre, description } = req.body;
   const new_cours = new Communication({
     titre,
-    date: new Date().toDateString(),
+    date: new Date().toLocaleDateString("en-US"),
     description,
   })
     .save()

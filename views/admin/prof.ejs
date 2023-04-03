@@ -41,7 +41,13 @@
               <td data-title="Departement"><%= item.mail %></td>
               <td data-title="Action">
                 <!-- Modal -->
-
+                <a
+                  href="/admin/delete_prof/<%= item._id %>"
+                  class="btn btn-success"
+                >
+                  <i class="ti-trash" style="margin-right: 5px"></i>Effacer</a
+                >
+              </td>
                 <!-- Modal -->
               </td>
             </tr>

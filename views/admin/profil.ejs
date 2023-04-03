@@ -5,45 +5,90 @@
     <div class="col-lg-12 m-b30">
       <div class="widget-box">
         <div class="wc-title">
-          <h4>User Profile</h4>
+          <h4>Profile admin</h4>
         </div>
         <div class="widget-inner">
-          <form class="edit-profile m-b30">
+          <%- include("../alertMessage") %>
+          <form
+            class="edit-profile m-b30"
+            action="/admin/update_profil"
+            method="post"
+          >
             <div class="">
               <div class="form-group row">
                 <div class="col-sm-10 ml-auto">
-                  <h3>1. Personal Details</h3>
+                  <h3>1. Details personnels</h3>
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Full Name</label>
-                <div class="col-sm-7">
-                  <input class="form-control" type="text" value="Mark Andre" />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Occupation</label>
-                <div class="col-sm-7">
-                  <input class="form-control" type="text" value="CTO" />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Company Name</label>
-                <div class="col-sm-7">
-                  <input class="form-control" type="text" value="EduChamp" />
-                  <span class="help"
-                    >If you want your invoices addressed to a company. Leave
-                    blank to use your full name.</span
-                  >
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Phone No.</label>
+                <label class="col-sm-2 col-form-label">Nom</label>
                 <div class="col-sm-7">
                   <input
                     class="form-control"
                     type="text"
-                    value="+120 012345 6789"
+                    name="nom"
+                    value="<%= profil.nom %>"
+                  />
+                  <input
+                    class="form-control"
+                    type="hidden"
+                    name="id"
+                    value="<%= profil._id %>"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Postnom</label>
+                <div class="col-sm-7">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="postnom"
+                    value="<%= profil.postnom %>"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Prenom</label>
+                <div class="col-sm-7">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="prenom"
+                    value="<%= profil.prenom %>"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Adresse mail</label>
+                <div class="col-sm-7">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="mail"
+                    value="<%= profil.mail %>"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Nom d'utilisateur</label>
+                <div class="col-sm-7">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="username"
+                    value="<%= profil.username %>"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Tel</label>
+                <div class="col-sm-7">
+                  <input
+                    class="form-control"
+                    type="text"
+                    value="<%= profil.tel %>"
+                    name="tel"
                   />
                 </div>
               </div>
@@ -52,85 +97,51 @@
 
               <div class="form-group row">
                 <div class="col-sm-10 ml-auto">
-                  <h3>2. Address</h3>
+                  <h3>2. Adresse</h3>
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Address</label>
+                <label class="col-sm-2 col-form-label">Adresse</label>
                 <div class="col-sm-7">
                   <input
                     class="form-control"
                     type="text"
-                    value="5-S2-20 Dummy City, UK"
+                    name="adresse"
+                    value="<%= profil.adresse %>"
                   />
                 </div>
               </div>
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">City</label>
-                <div class="col-sm-7">
-                  <input class="form-control" type="text" value="US" />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">State</label>
-                <div class="col-sm-7">
-                  <input class="form-control" type="text" value="California" />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Postcode</label>
-                <div class="col-sm-7">
-                  <input class="form-control" type="text" value="000702" />
-                </div>
-              </div>
-
               <div
                 class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"
               ></div>
-
+            </div>
+            <div class="">
               <div class="form-group row">
                 <div class="col-sm-10 ml-auto">
-                  <h3 class="m-form__section">3. Social Links</h3>
+                  <h3>3. Changer de mot de passe</h3>
                 </div>
               </div>
-
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Linkedin</label>
+              <!-- <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Mot de passe</label>
                 <div class="col-sm-7">
                   <input
                     class="form-control"
-                    type="text"
-                    value="www.linkedin.com"
+                    type="password"
+                    name="password"
+                    value=""
                   />
                 </div>
-              </div>
+              </div> -->
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Facebook</label>
+                <label class="col-sm-2 col-form-label"
+                  >Confirmer mot de passe</label
+                >
                 <div class="col-sm-7">
                   <input
                     class="form-control"
-                    type="text"
-                    value="www.facebook.com"
-                  />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Twitter</label>
-                <div class="col-sm-7">
-                  <input
-                    class="form-control"
-                    type="text"
-                    value="www.twitter.com"
-                  />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Instagram</label>
-                <div class="col-sm-7">
-                  <input
-                    class="form-control"
-                    type="text"
-                    value="www.instagram.com"
+                    type="password"
+                    name="confirmation"
+                    value=""
                   />
                 </div>
               </div>
@@ -140,44 +151,10 @@
                 <div class="row">
                   <div class="col-sm-2"></div>
                   <div class="col-sm-7">
-                    <button type="reset" class="btn">Save changes</button>
-                    <button type="reset" class="btn-secondry">Cancel</button>
+                    <button type="submit" class="btn">Enregistrer</button>
+                    <button type="reset" class="btn-secondry">Annuler</button>
                   </div>
                 </div>
-              </div>
-            </div>
-          </form>
-          <form class="edit-profile">
-            <div class="">
-              <div class="form-group row">
-                <div class="col-sm-10 ml-auto">
-                  <h3>4. Password</h3>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Current Password</label>
-                <div class="col-sm-7">
-                  <input class="form-control" type="password" value="" />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">New Password</label>
-                <div class="col-sm-7">
-                  <input class="form-control" type="password" value="" />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Re Type Password</label>
-                <div class="col-sm-7">
-                  <input class="form-control" type="password" value="" />
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-2"></div>
-              <div class="col-sm-7">
-                <button type="reset" class="btn">Save changes</button>
-                <button type="reset" class="btn-secondry">Cancel</button>
               </div>
             </div>
           </form>
