@@ -1,0 +1,211 @@
+<%- include("./partials/adminHeader") %>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Your Profile Views Chart -->
+    <div class="col-lg-12 m-b30">
+      <div class="widget-box">
+        <div class="wc-title">
+          <h4>Ajouter un cours</h4>
+        </div>
+        <div class="widget-inner">
+          <form
+            class="edit-profile m-b30"
+            method="post"
+            action="/admin/update_course"
+            enctype="multipart/form-data"
+          >
+            <div class="row">
+              <div class="col-12">
+                <div class="ml-auto">
+                  <h3>1. Information de base</h3>
+                </div>
+              </div>
+              <div class="form-group col-6">
+                <label class="col-form-label">Titre du cours</label>
+                <div>
+                  <input
+                    class="form-control"
+                    name="titre"
+                    type="text"
+                    value="<%- cours.titre %>"
+                    required
+                  />
+                  <input
+                    class="form-control"
+                    name="id"
+                    type="hidden"
+                    value="<%- cours._id %>"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group col-6">
+                <label class="col-form-label">Nom prof</label>
+                <div>
+                  <input
+                    class="form-control"
+                    name="nom_prof"
+                    type="text"
+                    value="<%- cours.prof %>"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group col-6">
+                <label class="col-form-label">Departement</label>
+                <div>
+                  <select name="departement" id="">
+                    <!-- <option value="" disabled selected>
+                      Choisir un departement
+                    </option> -->
+                    <option value=" <%- cours.departement %>"> <%- cours.departement %></option>
+                    <option value="Biologie">Biologie</option>
+                    <option value="Chimie">Chimie</option>
+                    <option value="Informatique">Informatique</option>
+                    <option value="Mathématique">Mathématique</option>
+                    <option value="Physique">Physique</option>
+                    <option value="Anglais">Anglais</option>
+                    <option value="Français">Français</option>
+                    <option value="Histoire">Histoire</option>
+                    <option value="Psychopédagogie">Psychopédagogie</option>
+                    <option value="Sciences agro-vétérinaires">
+                      Sciences agro-vétérinaires
+                    </option>
+                    <option value="Français">Français</option>
+                    <option value="Sciences de gestion">
+                      Sciences de gestion
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group col-6">
+                <label class="col-form-label">Section</label>
+                <div>
+                  <select name="section" id="">
+                    <!-- <option value="" disabled selected>
+                      Choisir une Section
+                    </option> -->
+                    <option value=" <%- cours.section %>"> <%- cours.section %></option>
+                    <option value="Biologie">
+                      Section des Sciences et Technologies
+                    </option>
+                    <option value="Chimie">
+                      Section des Lettres et Sciences Humaines
+                    </option>
+                    <option value="Informatique">Section Technique</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <div class="select">
+                    <label class="label-select">Promotion</label>
+                    <select name="promotion" id="">
+                      <option value="" disabled selected>
+                        Choisir une Section
+                      </option>
+                      <option value="G1">Premier graduat</option>
+                      <option value="G2">Deuxième graduat</option>
+                      <option value="G3">Troisième graduat</option>
+                      <option value="L1">Première Licence</option>
+                      <option value="L2">Deuxieme Licence</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-6">
+                <label class="col-form-label" for="image">Image cours</label>
+                <div>
+                  <input
+                    class="form-control"
+                    name="image"
+                    type="file"
+                    value=""
+                    accept="image/png image/jpeg image/jfif"
+                  />
+                </div>
+              </div>
+              <!-- <div class="form-group col-6">
+                <label class="col-form-label">Teacher name</label>
+                <div>
+                  <input class="form-control" type="text" value="" />
+                </div>
+              </div> -->
+              <div class="seperator"></div>
+
+              <div class="col-12 m-t20">
+                <div class="ml-auto m-b5">
+                  <h3>2. Description</h3>
+                </div>
+              </div>
+              <div class="form-group col-6">
+                <label class="col-form-label">Description du cours</label>
+                <div>
+                  <br>
+                  <textarea class="form-control" name="description" cols="10" rows="8"> <%- cours.description %></textarea>
+                </br>
+                </div>
+              </div>
+              <!-- <div class="col-12 m-t20">
+                <div class="ml-auto">
+                  <h3 class="m-form__section">3. Add Item</h3>
+                </div>
+              </div> -->
+              <!-- <div class="col-12">
+                <table id="item-add" style="width: 100%">
+                  <tr class="list-item">
+                    <td>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <label class="col-form-label">Course Name</label>
+                          <div>
+                            <input class="form-control" type="text" value="" />
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <label class="col-form-label">Course Category</label>
+                          <div>
+                            <input class="form-control" type="text" value="" />
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <label class="col-form-label">Course Category</label>
+                          <div>
+                            <input class="form-control" type="text" value="" />
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <label class="col-form-label">Close</label>
+                          <div class="form-group">
+                            <a class="delete" href="#"
+                              ><i class="fa fa-close"></i
+                            ></a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div> -->
+              <div class="col-12">
+                <button type="submit" class="btn">Enregistrer</button>
+
+                <a
+                  href="/admin/cours"
+                  type="button"
+                  class="btn-secondry add-item m-r5"
+                >
+                  <i class="fa fa-fw fa-arrow-left"></i>Retour
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Your Profile Views Chart END-->
+  </div>
+</div>
+
+<%- include("./partials/adminFooter") %>

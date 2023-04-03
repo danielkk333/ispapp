@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Mirrored from educhamp.themetrades.com/demo/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:08:15 GMT -->
+  <head>
+    <!-- META ============================================= -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+
+    <!-- DESCRIPTION -->
+    <meta name="description" content="Institut superieur Mbanza ngungu" />
+
+    <!-- OG -->
+    <meta property="og:title" content="Institut superieur Mbanza ngungu" />
+    <meta
+      property="og:description"
+      content="Institut superieur Mbanza ngungu"
+    />
+    <meta property="og:image" content="" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- FAVICONS ICON ============================================= -->
+    <link rel="icon" href="../error-404.html" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../../../admin/images/favicon.png"
+    />
+
+    <!-- PAGE TITLE HERE ============================================= -->
+    <title>Institut superieur Mbanza ngungu</title>
+
+    <!-- MOBILE SPECIFIC ============================================= -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--[if lt IE 9]>
+      <script src="../../../admin/js/html5shiv.min.js"></script>
+      <script src="../../../admin/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- All PLUGINS CSS ============================================= -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../../admin/css/assets.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../../admin/vendors/calendar/fullcalendar.css"
+    />
+
+    <!-- TYPOGRAPHY ============================================= -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../../admin/css/typography.css"
+    />
+
+    <!-- SHORTCODES ============================================= -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../../admin/css/shortcodes/shortcodes.css"
+    />
+
+    <!-- STYLESHEETS ============================================= -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../../admin/css/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../../admin/css/dashboard.css"
+    />
+    <link
+      class="skin"
+      rel="stylesheet"
+      type="text/css"
+      href="../../../admin/css/color/color-1.css"
+    />
+  </head>
+  <body class="ttr-opened-sidebar ttr-pinned-sidebar">
+    <!-- header start -->
+    <header class="ttr-header">
+      <div class="ttr-header-wrapper">
+        <!--sidebar menu toggler start -->
+        <div class="ttr-toggle-sidebar ttr-material-button">
+          <i class="ti-close ttr-open-icon"></i>
+          <i class="ti-menu ttr-close-icon"></i>
+        </div>
+        <!--sidebar menu toggler end -->
+        <!--logo start -->
+        <div class="ttr-logo-box">
+          <div>
+            <!-- <a href="index.html" class="ttr-logo">
+						<img class="ttr-logo-mobile" alt="" src="../../../dmin/images/logo-mobile.png" width="30" height="30">
+						<img class="ttr-logo-desktop" alt="" src="../../../dmin/images/logo-white.png" width="160" height="27">
+					</a> -->
+          </div>
+        </div>
+        <!--logo end -->
+        <div class="ttr-header-menu">
+          <!-- header left menu start -->
+          <!-- <ul class="ttr-header-navigation">
+					<li>
+						<a href="../index.html" class="ttr-material-button ttr-submenu-toggle">HOME</a>
+					</li>
+					<li>
+						<a href="#" class="ttr-material-button ttr-submenu-toggle">QUICK MENU <i class="fa fa-angle-down"></i></a>
+						<div class="ttr-header-submenu">
+							<ul>
+								<li><a href="../courses.html">Our Courses</a></li>
+								<li><a href="../event.html">New Event</a></li>
+								<li><a href="../membership.html">Membership</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul> -->
+          <!-- header left menu end -->
+        </div>
+        <div class="ttr-header-right ttr-with-seperator">
+          <!-- header right menu start -->
+          <ul class="ttr-header-navigation">
+            <li class="">
+              <!-- <a href="#" class="ttr-material-button ttr-search-toggle"><i class="fa fa-search"></i></a> -->
+            </li>
+          </ul>
+          <div
+            style="
+              display: flex;
+              height: 60px;
+              align-items: center;
+              margin-right: 15px;
+              color: white;
+            "
+          >
+            <%=user.nom %>
+            <a href="/auth/logout" style="margin-left: 10px">Déconnection</a>
+          </div>
+          <!-- header right menu end -->
+        </div>
+        <!--header search panel start -->
+        <div class="ttr-search-bar">
+          <form class="ttr-search-form">
+            <div class="ttr-search-input-wrapper">
+              <input
+                type="text"
+                name="qq"
+                placeholder="search something..."
+                class="ttr-search-input"
+              />
+              <button type="submit" name="search" class="ttr-search-submit">
+                <i class="ti-arrow-right"></i>
+              </button>
+            </div>
+            <span class="ttr-search-close ttr-search-toggle">
+              <i class="ti-close"></i>
+            </span>
+          </form>
+        </div>
+        <!--header search panel end -->
+      </div>
+    </header>
+    <!-- header end -->
+    <!-- Left sidebar menu start -->
+    <div class="ttr-sidebar">
+      <div class="ttr-sidebar-wrapper content-scroll">
+        <!-- side menu logo start -->
+        <div class="ttr-sidebar-logo">
+          <a href="#">
+            <!-- <img alt="" src="../../../dmin/images/logo.png" width="122" height="27"> -->
+            <h1 style="color: black">Logo</h1></a
+          >
+          <!-- <div class="ttr-sidebar-pin-button" title="Pin/Unpin Menu">
+					<i class="material-icons ttr-fixed-icon">gps_fixed</i>
+					<i class="material-icons ttr-not-fixed-icon">gps_not_fixed</i>
+				</div> -->
+          <div class="ttr-sidebar-toggle-button">
+            <i class="ti-arrow-left"></i>
+          </div>
+        </div>
+        <!-- side menu logo end -->
+        <!-- sidebar menu start -->
+        <nav class="ttr-sidebar-navi">
+          <ul>
+            <li>
+              <a href="/admin/dashboard" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-home"></i></span>
+                <span class="ttr-label">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-book"></i></span>
+                <span class="ttr-label">Cours</span>
+                <span class="ttr-arrow-icon"
+                  ><i class="fa fa-angle-down"></i
+                ></span>
+              </a>
+              <ul>
+                <li>
+                  <a href="/admin/cours" class="ttr-material-button"
+                    ><span class="ttr-label">Cours</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/admin/nouveau_cours" class="ttr-material-button"
+                    ><span class="ttr-label">Nouveau cours</span></a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-user"></i></span>
+                <span class="ttr-label">Etudiant</span>
+                <span class="ttr-arrow-icon"
+                  ><i class="fa fa-angle-down"></i
+                ></span>
+              </a>
+              <ul>
+                <li>
+                  <a href="/admin/etudiants" class="ttr-material-button"
+                    ><span class="ttr-label">Etudiant</span></a
+                  >
+                </li>
+                <!-- <li>
+                  <a href="/admin/nouveau_etudiant" class="ttr-material-button"
+                    ><span class="ttr-label">Nouvel Etudiant</span></a
+                  >
+                </li> -->
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-calendar"></i></span>
+                <span class="ttr-label">Horaire</span>
+                <span class="ttr-arrow-icon"
+                  ><i class="fa fa-angle-down"></i
+                ></span>
+              </a>
+              <ul>
+                <li>
+                  <a href="/admin/horaire" class="ttr-material-button"
+                    ><span class="ttr-label">Horaire</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/admin/nouveau_horaire" class="ttr-material-button"
+                    ><span class="ttr-label">Nouveau horaire</span></a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-book"></i></span>
+                <span class="ttr-label">Prof</span>
+                <span class="ttr-arrow-icon"
+                  ><i class="fa fa-angle-down"></i
+                ></span>
+              </a>
+              <ul>
+                <li>
+                  <a href="/admin/prof" class="ttr-material-button"
+                    ><span class="ttr-label">Prof</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/admin/nouveau_prof" class="ttr-material-button"
+                    ><span class="ttr-label">Nouveau Prof</span></a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-email"></i></span>
+                <span class="ttr-label">Communication</span>
+                <span class="ttr-arrow-icon"
+                  ><i class="fa fa-angle-down"></i
+                ></span>
+              </a>
+              <ul>
+                <li>
+                  <a href="/admin/communications" class="ttr-material-button"
+                    ><span class="ttr-label">Communication</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/admin/nouvelle_communication"
+                    class="ttr-material-button"
+                    ><span class="ttr-label">Créer communication</span></a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/admin/profil" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-user"></i></span>
+                <span class="ttr-label">Profil</span>
+              </a>
+            </li>
+            <li class="ttr-seperate"></li>
+          </ul>
+          <!-- sidebar menu end -->
+        </nav>
+        <!-- sidebar menu end -->
+      </div>
+    </div>
+    <!-- Left sidebar menu end -->
+
+    <!--Main container start -->
+    <main class="ttr-wrapper">
+      <div class="container-fluid">
+        <div class="db-breadcrumb">
+          <h4 class="breadcrumb-title">Dashboard</h4>
+          <ul class="db-breadcrumb-list">
+            <li>
+              <a href="#"><i class="fa fa-home"></i>Accueil</a>
+            </li>
+            <li>Dashboard</li>
+          </ul>
+        </div>
+        <!-- Card -->
+        <div class="row">
+          <div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
+            <div class="widget-card widget-bg1">
+              <div class="wc-item">
+                <h4 class="wc-title">Professeurs</h4>
+                <span class="wc-des"> Nombre total des professeurs </span>
+                <span class="wc-stats">
+                  <span class="counter"><%= countprofs %></span>
+                </span>
+                <div class="progress wc-progress">
+                  <!-- <div class="progress-bar" role="progressbar" style="width: 78%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> -->
+                </div>
+                <span class="wc-progress-bx" style="visibility: hidden">
+                  <span class="wc-change"> Change </span>
+                  <span class="wc-number ml-auto"> 78% </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
+            <div class="widget-card widget-bg2">
+              <div class="wc-item">
+                <h4 class="wc-title">Etudiants</h4>
+                <span class="wc-des"> Nombre total etudiant </span>
+                <span class="wc-stats counter"> <%= countEtudiants %> </span>
+                <div class="progress wc-progress">
+                  <!-- <div class="progress-bar" role="progressbar" style="width: 88%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> -->
+                </div>
+                <span class="wc-progress-bx" style="visibility: hidden">
+                  <span class="wc-change"> Change </span>
+                  <span class="wc-number ml-auto"> 88% </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
+            <div class="widget-card widget-bg3">
+              <div class="wc-item">
+                <h4 class="wc-title">Etudiant suspendu</h4>
+                <span class="wc-des"> Pour non paiement </span>
+                <span class="wc-stats counter"> <%= countEtuPasPayer %> </span>
+                <div class="progress wc-progress">
+                  <!-- <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> -->
+                </div>
+                <span class="wc-progress-bx" style="visibility: hidden">
+                  <span class="wc-change"> Change </span>
+                  <span class="wc-number ml-auto"> 65% </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
+            <div class="widget-card widget-bg4">
+              <div class="wc-item">
+                <h4 class="wc-title">Etudiant en ordre</h4>
+                <span class="wc-des"> Etudiant ayant payé ses frais acad </span>
+                <span class="wc-stats counter"> <%= countEtuEnOrdre %> </span>
+                <div class="progress wc-progress">
+                  <!-- <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> -->
+                </div>
+                <span class="wc-progress-bx" style="visibility: hidden">
+                  <span class="wc-change"> Change </span>
+                  <span class="wc-number ml-auto"> 90% </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card END -->
+        <div class="row">
+          <!-- Your Profile Views Chart -->
+          <!-- Your Profile Views Chart END-->
+          <!-- <div class="col-lg-4 m-b30">
+					<div class="widget-box">
+						<div class="wc-title">
+							<h4>Notifications</h4>
+						</div>
+						<div class="widget-inner">
+							<div class="noti-box-list">
+								<ul>
+									<li>
+										<span class="notification-icon dashbg-gray">
+											<i class="fa fa-check"></i>
+										</span>
+										<span class="notification-text">
+											<span>Sneha Jogi</span> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 02:14</span>
+										</span>
+									</li>
+									<li>
+										<span class="notification-icon dashbg-yellow">
+											<i class="fa fa-shopping-cart"></i>
+										</span>
+										<span class="notification-text">
+											<a href="#">Your order is placed</a> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 7 Min</span>
+										</span>
+									</li>
+									<li>
+										<span class="notification-icon dashbg-red">
+											<i class="fa fa-bullhorn"></i>
+										</span>
+										<span class="notification-text">
+											<span>Your item is shipped</span> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 2 May</span>
+										</span>
+									</li>
+									<li>
+										<span class="notification-icon dashbg-green">
+											<i class="fa fa-comments-o"></i>
+										</span>
+										<span class="notification-text">
+											<a href="#">Sneha Jogi</a> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 14 July</span>
+										</span>
+									</li>
+									<li>
+										<span class="notification-icon dashbg-primary">
+											<i class="fa fa-file-word-o"></i>
+										</span>
+										<span class="notification-text">
+											<span>Sneha Jogi</span> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 15 Min</span>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div> -->
+          <div class="col-lg-6 m-b30">
+            <div class="widget-box">
+              <div class="wc-title">
+                <h4>Nouveaux etudiants</h4>
+              </div>
+              <div class="widget-inner">
+                <div class="new-user-list">
+                  <ul>
+                    <% etudiants.forEach(function(etudiant){ %>
+                    <li>
+                      <span class="new-users-pic">
+                        <img src="../../../assets/images/avatar.png" alt="" />
+                      </span>
+                      <span class="new-users-text">
+                        <a class="new-users-name"
+                          ><%= etudiant.nom %>
+                          <span style="margin-left: 4px"
+                            ><%= etudiant.nom %></span
+                          ></a
+                        >
+                        <span class="new-users-info"
+                          ><%= etudiant.section %>
+                          <span style="margin-left: 4px"
+                            ><%= etudiant.departement %></span
+                          >
+                          <span style="margin-left: 4px"
+                            ><%= etudiant.promotion %></span
+                          >
+                        </span>
+                      </span>
+                      <!-- <span class="new-users-btn">
+											<a href="#" class="btn button-sm outline">Follow</a>
+										</span> -->
+                    </li>
+                    <% })%>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-lg-6 m-b30">
+            <div class="widget-box">
+              <div
+                class="wc-title d-flex justify-content-between align-items-center"
+              >
+                <h4>Taches</h4>
+                <a href="" class="btn btn-success">Nouvelle tache</a>
+              </div>
+              <div class="widget-inner">
+                <div class="orders-list">
+                  <ul>
+                    <% taches.forEach(function(tache){ %>
+                    <li>
+                      <span class="orders-title">
+                        <a href="#" class="orders-title-name">tache.nom </a>
+                        <span class="orders-info">tache.date</span>
+                      </span>
+                      <% if(tache.status == "off"){%>
+                      <span class="orders-btn">
+                        <a href="#" class="btn button-sm red">Inachevée</a>
+                      </span>
+                      <% }else{%>
+                      <span class="orders-btn">
+                        <a class="btn button-sm green">Achevée</a>
+                      </span>
+                      <% }%>
+                      <span class="btn-primary">
+                        <a href="/admin/tache_terminer/<%= tache._id %>"
+                          >Terminer</a
+                        >
+                      </span>
+                    </li>
+                    <% })%>
+                    <li>
+                      <span class="orders-title">
+                        <a href="#" class="orders-title-name">Anna Strong </a>
+                        <span class="orders-info"
+                          >Order #02357 | Date 12/08/2019</span
+                        >
+                      </span>
+                      <span class="orders-btn">
+                        <a href="#" class="btn button-sm green">Paid</a>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <div class="col-lg-6 m-b30">
+            <div class="widget-box">
+              <div class="wc-title">
+                <h4>Nouveaux Professeurs</h4>
+              </div>
+              <div class="widget-inner">
+                <div class="new-user-list">
+                  <ul>
+                    <% profs.forEach(function(prof){ %>
+                    <li>
+                      <span class="new-users-pic">
+                        <img src="../../../assets/images/avatar.png" alt="" />
+                      </span>
+                      <span class="new-users-text">
+                        <a class="new-users-name"
+                          ><%= prof.nom %>
+                          <span style="margin-left: 4px"
+                            ><%= prof.nom %></span
+                          ></a
+                        >
+                        <span class="new-users-info"
+                          ><%= prof.section %>
+                          <span style="margin-left: 4px"
+                            ><%= prof.departement %></span
+                          >
+                          <span style="margin-left: 4px"
+                            ><%= prof.promotion %></span
+                          >
+                        </span>
+                      </span>
+                      <!-- <span class="new-users-btn">
+												<a href="#" class="btn button-sm outline">Follow</a>
+											</span> -->
+                    </li>
+                    <% })%>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="ttr-overlay"></div>
+
+    <!-- External JavaScripts -->
+    <script src="../../../admin/js/jquery.min.js"></script>
+    <script src="../../../admin/vendors/bootstrap/js/popper.min.js"></script>
+    <script src="../../../admin/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../admin/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="../../../admin/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+    <script src="../../../admin/vendors/magnific-popup/magnific-popup.js"></script>
+    <script src="../../../admin/vendors/counter/waypoints-min.js"></script>
+    <script src="../../../admin/vendors/counter/counterup.min.js"></script>
+    <script src="../../../admin/vendors/imagesloaded/imagesloaded.js"></script>
+    <script src="../../../admin/vendors/masonry/masonry.js"></script>
+    <script src="../../../admin/vendors/masonry/filter.js"></script>
+    <script src="../../../admin/vendors/owl-carousel/owl.carousel.js"></script>
+    <script src="../../../admin/vendors/scroll/scrollbar.min.js"></script>
+    <script src="../../../admin/js/functions.js"></script>
+    <script src="../../../admin/vendors/chart/chart.min.js"></script>
+    <script src="../../../admin/js/admin.js"></script>
+    <!-- <script src='../../../admin/vendors/calendar/moment.min.js'></script>
+<script src='../../../admin/vendors/calendar/fullcalendar.js'></script> -->
+    <!-- <script>
+  $(document).ready(function() {
+
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay,listWeek'
+      },
+      defaultDate: '2019-03-12',
+      navLinks: true, // can click day/week names to navigate views
+
+      weekNumbers: true,
+      weekNumbersWithinDays: true,
+      weekNumberCalculation: 'ISO',
+
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: 'All Day Event',
+          start: '2019-03-01'
+        },
+		{
+          title: 'daniel kalenga',
+          start: '2019-04-01'
+        },
+        {
+          title: 'Long Event',
+          start: '2019-03-07',
+          end: '2019-03-10'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2019-03-09T16:00:00'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2019-03-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2019-03-11',
+          end: '2019-03-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2019-03-12T10:30:00',
+          end: '2019-03-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2019-03-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2019-03-12T14:30:00'
+        },
+        {
+          title: 'Happy Hour',
+          start: '2019-03-12T17:30:00'
+        },
+        {
+          title: 'Dinner',
+          start: '2019-03-12T20:00:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2019-03-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2019-03-28'
+        }
+      ]
+    });
+
+  });
+
+</script> -->
+  </body>
+
+  <!-- Mirrored from educhamp.themetrades.com/demo/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:09:05 GMT -->
+</html>

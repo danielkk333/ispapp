@@ -1,0 +1,47 @@
+<%- include("./partials/adminHeader") %>
+<div class="row">
+  <!-- Your Profile Views Chart -->
+  <div class="col-lg-12 m-b30">
+    <div class="widget-box">
+      <div class="email-wrapper">
+        <div class="mail-list-container">
+          <div class="mail-toolbar">
+            <h4>Communication</h4>
+          </div>
+          <%- include("../alertMessage") %> <% com.forEach(function(item){ %>
+          <div class="mail-box-list">
+            <div class="mail-list-info">
+              <div class="mail-rateing">
+                <span><i class="fa fa-star-o"></i></span>
+              </div>
+              <div class="mail-list-title">
+                <h6><%= item.titre %></h6>
+              </div>
+              <div class="mail-list-title-info">
+                <p><%= item.description.substring(0,70) +" ..." %></p>
+              </div>
+              <div class="mail-list-time">
+                <span><%= item.date %></span>
+              </div>
+              <ul class="mailbox-toolbar">
+                <a href="/admin/delete_communication/<%= item._id %>">
+                  <li data-toggle="tooltip" title="Effacer">
+                    <i class="fa fa-trash-o"></i>
+                  </li>
+                </a>
+                <a href="/admin/lire/<%= item._id %>">
+                  <li data-toggle="tooltip" title="Lire communication">
+                    <i class="fa fa-book"></i>
+                  </li>
+                </a>
+              </ul>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+    <!-- Your Profile Views Chart END-->
+  </div>
+</div>
+<%- include("./partials/adminFooter") %>

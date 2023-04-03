@@ -1,0 +1,46 @@
+<%- include("./partials/adminHeader") %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 m-b30">
+      <div class="widget-box">
+        <div class="wc-title">
+          <h4>Liste Etudiant</h4>
+        </div>
+        <%- include("../alertMessage") %>
+        <table class="table myTable" id="mytables">
+          <thead class="thead">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Cours</th>
+              <th scope="col">Departement</th>
+              <th scope="col">Promotion</th>
+              <th scope="col">Date</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% var i = 1 %> %> <% horaire.forEach(function(item){ %>
+            <tr>
+              <th scope="row"><%= i++ %></th>
+              <td data-title="Cours"><%= item.nom_cours %></td>
+              <td data-title="Departement"><%= item.departement %></td>
+              <td data-title="Promotion"><%= item.promotion %></td>
+              <td data-title="Date"><%= item.date %></td>
+
+              <td data-title="Action">
+                <a href="" class="btn btn-success">
+                  <i class="ti-trash" style="margin-right: 5px"></i>Effacer</a
+                >
+              </td>
+              <!-- Modal -->
+              <!-- Modal -->
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Your Profile Views Chart END-->
+  </div>
+</div>
+<%- include("./partials/adminFooter") %>

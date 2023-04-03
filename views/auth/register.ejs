@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- META ============================================= -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+
+    <!-- DESCRIPTION -->
+    <meta name="description" content="Institut superieur Mbanza ngungu" />
+
+    <!-- OG -->
+    <meta property="og:title" content="Institut superieur Mbanza ngungu" />
+    <meta
+      property="og:description"
+      content="Institut superieur Mbanza ngungu"
+    />
+    <meta property="og:image" content="" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- FAVICONS ICON ============================================= -->
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/assets/images/favicon.png"
+    />
+
+    <!-- PAGE TITLE HERE ============================================= -->
+    <title>Institut superieur Mbanza ngungu</title>
+
+    <!-- MOBILE SPECIFIC ============================================= -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.min.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- All PLUGINS CSS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/assets.css" />
+
+    <!-- TYPOGRAPHY ============================================= -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/typography.css" />
+
+    <!-- SHORTCODES ============================================= -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/css/shortcodes/shortcodes.css"
+    />
+
+    <!-- STYLESHEETS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link
+      class="skin"
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/css/color/color-1.css"
+    />
+  </head>
+  <body id="bg">
+    <div class="page-wraper">
+      <div id="loading-icon-bx"></div>
+      <div class="account-form">
+        <div
+          class="account-head"
+          style="background-image: url(/assets/images/background/bg2.jpg)"
+        >
+          <a href="/"
+            ><img src="assets/images/logo-white-2.png" alt="" />
+            <h1 style="color: white">Logo</h1></a
+          >
+        </div>
+        <div class="account-form-inner">
+          <div class="account-container">
+            <div class="heading-bx left">
+              <%- include("../alertMessage") %>
+              <h2 class="title-head">S'enregistrer <span>Ici</span></h2>
+              <p>
+                Vous avez deja un compte <a href="/auth/login">Cliquer ici</a>
+              </p>
+            </div>
+            <form class="contact-bx" action="/auth/register" method="post">
+              <div class="row placeani">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label>Nom</label>
+                      <input
+                        name="nom"
+                        type="text"
+                        required=""
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label>Postnom</label>
+                      <input
+                        name="postnom"
+                        type="text"
+                        required=""
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label>Prenom</label>
+                      <input
+                        name="prenom"
+                        type="text"
+                        required=""
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label>Nom d'utilisateur</label>
+                      <input
+                        name="username"
+                        type="text"
+                        required=""
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="col-lg-12">
+							<div class="">
+								<div class="select">
+									<label style="color:#606060 !important"  class="label-select"> Role</label>
+									<select class="" name="role" style="color:yellow !important">
+										<option value="etudiant" class="">Etudiant</option>
+										<option value="prof" class="">Professeur</option>
+									</select>
+								</div>
+							</div>
+						</div> -->
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label>Adresse mail</label>
+                      <input
+                        name="mail"
+                        type="email"
+                        required=""
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="select">
+                      <label class="label-select">Section</label>
+                      <select name="section" id="">
+                        <option value="" disabled selected>
+                          Choisir une Section
+                        </option>
+                        <option value="Section des Sciences et Technologies">
+                          Section des Sciences et Technologies
+                        </option>
+                        <option
+                          value="Section des Lettres et Sciences Humaines"
+                        >
+                          Section des Lettres et Sciences Humaines
+                        </option>
+                        <option value="Section Technique">
+                          Section Technique
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="Select">
+                      <label class="label-select">Département</label>
+                      <select name="departement" id="" required>
+                        <option value="" disabled selected>
+                          Choisir un departement
+                        </option>
+                        <option value="Biologie">Biologie</option>
+                        <option value="Chimie">Chimie</option>
+                        <option value="Informatique">Informatique</option>
+                        <option value="Mathématique">Mathématique</option>
+                        <option value="Physique">Physique</option>
+                        <option value="Anglais">Anglais</option>
+                        <option value="Français">Français</option>
+                        <option value="Histoire">Histoire</option>
+                        <option value="Psychopédagogie">Psychopédagogie</option>
+                        <option value="Sciences agro-vétérinaires">
+                          Sciences agro-vétérinaires
+                        </option>
+                        <option value="Français">Français</option>
+                        <option value="Sciences de gestion">
+                          Sciences de gestion
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="select">
+                      <label class="label-select">Promotion</label>
+                      <select name="promotion" id="">
+                        <option value="" disabled selected>
+                          Choisir une Section
+                        </option>
+                        <option value="G1">Premier graduat</option>
+                        <option value="G2">Deuxième graduat</option>
+                        <option value="G3">Troisième graduat</option>
+                        <option value="L1">Première Licence</option>
+                        <option value="L2">Deuxieme Licence</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label>Mot de passe</label>
+                      <input
+                        name="password"
+                        type="password"
+                        class="form-control"
+                        required=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 m-b30">
+                  <button name="submit" type="submit" class="btn button-md">
+                    Enregistrer
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- External JavaScripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/vendors/bootstrap/js/popper.min.js"></script>
+    <script src="/assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="/assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+    <script src="/assets/vendors/magnific-popup/magnific-popup.js"></script>
+    <script src="/assets/vendors/counter/waypoints-min.js"></script>
+    <script src="/assets/vendors/counter/counterup.min.js"></script>
+    <script src="/assets/vendors/imagesloaded/imagesloaded.js"></script>
+    <script src="/assets/vendors/masonry/masonry.js"></script>
+    <script src="/assets/vendors/masonry/filter.js"></script>
+    <script src="/assets/vendors/owl-carousel/owl.carousel.js"></script>
+    <script src="/assets/js/functions.js"></script>
+    <script src="/assets/js/contact.js"></script>
+    <script src="/assets/vendors/switcher/switcher.js"></script>
+  </body>
+</html>

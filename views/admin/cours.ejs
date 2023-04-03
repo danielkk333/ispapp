@@ -1,0 +1,82 @@
+<%- include("./partials/adminHeader") %>
+<div class="col-lg-12 m-b30">
+  <div class="widget-box">
+    <%- include("../alertMessage") %>
+    <div class="wc-title">
+      <h4>Liste cours</h4>
+    </div>
+    <% cours.forEach(function(item){ %>
+    <div class="widget-inner">
+      <div class="card-courses-list admin-courses">
+        <div class="card-courses-media">
+          <img src="../uploads/<%= item.image %>" alt="" />
+        </div>
+        <div class="card-courses-full-dec">
+          <div class="card-courses-title">
+            <h4><%= item.titre %></h4>
+          </div>
+          <div class="card-courses-list-bx">
+            <ul class="card-courses-view">
+              <li class="card-courses-user">
+                <div class="card-courses-user-pic">
+                  <img src="../uploads/<%= item.image %>" alt="" />
+                </div>
+                <div class="card-courses-user-info">
+                  <h5>Prof</h5>
+                  <h4><%= item.prof %></h4>
+                </div>
+              </li>
+              <li class="card-courses-categories">
+                <h5>Section</h5>
+                <h4><%= item.section %></h4>
+              </li>
+              <li class="card-courses-categories">
+                <h5>Departement</h5>
+                <h4><%= item.departement %></h4>
+              </li>
+              <!-- <li class="card-courses-review">
+                <h5>3 Review</h5>
+                <ul class="cours-star">
+                  <li class="active"><i class="fa fa-star"></i></li>
+                  <li class="active"><i class="fa fa-star"></i></li>
+                  <li class="active"><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                </ul>
+              </li> -->
+              <!-- <li class="card-courses-stats">
+                <a href="#" class="btn button-sm green radius-xl">Pending</a>
+              </li>
+              <li class="card-courses-price">
+                <del>$190</del>
+                <h5 class="text-primary">$120</h5>
+              </li> -->
+            </ul>
+          </div>
+          <div class="row card-courses-dec">
+            <div class="col-md-12">
+              <h6 class="m-b10">Description du cours</h6>
+              <p style="white-space: pre-line !important">
+                <%- item.description %>
+              </p>
+            </div>
+            <div class="col-md-12">
+              <a
+                href="/admin/editer_cours/<%= item._id %>"
+                class="btn green radius-xl outline"
+                >Editer</a
+              >
+              <a
+                href="/admin/delete_cours/<%= item._id %>"
+                class="btn red outline radius-xl"
+                >Effacer</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+<%- include("./partials/adminFooter") %>

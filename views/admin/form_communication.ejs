@@ -1,0 +1,52 @@
+<%- include("./partials/adminHeader") %>
+
+<div class="row">
+  <!-- Your Profile Views Chart -->
+  <div class="col-lg-12 m-b30">
+    <div class="widget-box">
+      <div class="wc-title">
+        <h4>Nouvelle communication</h4>
+      </div>
+      <%- include("../alertMessage") %>
+      <div class="email-wrapper">
+        <!-- <div class="email-menu-bar">
+          <div class="compose-mail">
+            <a href="mailbox-compose.html" class="btn btn-block"></a>
+          </div>
+          <div class="email-menu-bar-inner"></div>
+        </div> -->
+        <div class="mail-list-container">
+          <form
+            class="mail-compose"
+            method="post"
+            action="/admin/save_communication"
+          >
+            <div class="form-group col-12">
+              <label for=""></label>
+              <input
+                class="form-control"
+                name="titre"
+                type="text"
+                placeholder="Titre"
+              />
+            </div>
+            <div class="form-group col-12">
+              <textarea
+                name="description"
+                id=""
+                class="form-control"
+                placeholder="Veuillez ecrire..."
+              ></textarea>
+            </div>
+            <div class="form-group col-12">
+              <button type="submit" class="btn btn-lg">Envoyer</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Your Profile Views Chart END-->
+</div>
+
+<%- include("./partials/adminFooter") %>

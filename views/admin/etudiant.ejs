@@ -1,0 +1,122 @@
+<%- include("./partials/adminHeader") %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 m-b30">
+      <div class="widget-box">
+        <div class="wc-title">
+          <h4>Liste Etudiant</h4>
+        </div>
+        <form method="post" action="/admin/search">
+          <div class="form-group row">
+            <div class="d-flex col-3">
+              <input
+                class="form-control"
+                type="text"
+                value=""
+                name="search"
+                required
+                placeholder="Chercher un etudiant"
+              />
+            </div>
+            <div class="d-flex col-3">
+              <label for="">Filtre par section</label>
+              <select name="section" id="">
+                <option value="" disabled selected>Choisir une Section</option>
+                <option value="Section des Sciences et Technologies">
+                  Section des Sciences et Technologies
+                </option>
+                <option value="Section des Lettres et Sciences Humaines">
+                  Section des Lettres et Sciences Humaines
+                </option>
+                <option value="Section Technique">Section Technique</option>
+              </select>
+            </div>
+            <div class="d-flex col-3">
+              <label for="">Filtre par departement</label>
+              <select name="departement" id="">
+                <option value="" disabled selected>
+                  Choisir un departement
+                </option>
+                <option value="Biologie">Biologie</option>
+                <option value="Chimie">Chimie</option>
+                <option value="Informatique">Informatique</option>
+                <option value="Mathématique">Mathématique</option>
+                <option value="Physique">Physique</option>
+                <option value="Anglais">Anglais</option>
+                <option value="Français">Français</option>
+                <option value="Histoire">Histoire</option>
+                <option value="Psychopédagogie">Psychopédagogie</option>
+                <option value="Sciences agro-vétérinaires">
+                  Sciences agro-vétérinaires
+                </option>
+                <option value="Français">Français</option>
+                <option value="Sciences de gestion">Sciences de gestion</option>
+              </select>
+            </div>
+            <div class="d-flex col-3">
+              <label for="">Filtre par promotion</label>
+              <select name="promotion" id="">
+                <option value="" disabled selected>Choisir une Section</option>
+                <option value="G1">Premier graduat</option>
+                <option value="G2">Deuxième graduat</option>
+                <option value="G3">Troisième graduat</option>
+                <option value="L1">Première Licence</option>
+                <option value="L2">Deuxieme Licence</option>
+              </select>
+            </div>
+            <div class="col-3 mr-3">
+              <button type="submit" class="btn-primary">Chercher</button>
+            </div>
+          </div>
+        </form>
+        <%- include("../alertMessage") %>
+        <table class="table myTable" id="mytables">
+          <thead class="thead">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nom</th>
+              <th scope="col">Postnom</th>
+              <th scope="col">Prenom</th>
+              <th scope="col">Section</th>
+              <th scope="col">Departement</th>
+              <th scope="col">Promotion</th>
+              <th scope="col">Status</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% var i = 1 %> %> <% etudiants.forEach(function(item){ %>
+            <tr>
+              <th scope="row"><%= i++ %></th>
+              <td data-title="Nom"><%= item.nom %></td>
+              <td data-title="postnom"><%= item.postnom %></td>
+              <td data-title="prenom"><%= item.prenom %></td>
+              <td data-title="section"><%= item.section %></td>
+              <td data-title="Departement"><%= item.departement %></td>
+              <td data-title="Promotion"><%= item.promotion %></td>
+              <% if(item.status == "off"){ %>
+              <td data-title="Status">
+                <p class="btn button-sm red"><%= "Insolvable" %></p>
+              </td>
+              <% }else{ %>
+              <td data-title="Status"><%= "En ordre" %></td>
+              <% } %>
+              <td data-title="Action">
+                <!-- Modal -->
+                <a
+                  href="/admin/suspendre_etudiant/<%= item._id %>"
+                  class="btn btn-success"
+                  >Suspendre</a
+                >
+                <!-- Modal -->
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Your Profile Views Chart END-->
+  </div>
+</div>
+<%- include("./partials/adminFooter") %>
