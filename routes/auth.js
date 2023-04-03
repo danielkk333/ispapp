@@ -9,35 +9,29 @@ const crypto = require("crypto");
 
 //REGISTER
 router.post("/register", async (req, res) => {
-  try {
-    const salt = await bcrypt.genSalt(10);
-    const hashedPass = await bcrypt.hash(req.body.password, salt);
-    const newUser = new User({
-      nom: req.body.username,
-      postnom: req.body.postnom,
-      prenom: req.body.prenom,
-      username: req.body.username,
-      section: req.body.section,
-      departement: req.body.departement,
-      promotion: req.body.promotion,
-      role: req.body.role,
-      mail: req.body.mail,
-      password: hashedPass,
-    });
+  const salt = await bcrypt.genSalt(10);
+  const hashedPass = await bcrypt.hash(req.body.password, salt);
+  const newUser = new User({
+    nom: req.body.username,
+    postnom: req.body.postnom,
+    prenom: req.body.prenom,
+    username: req.body.username,
+    section: req.body.section,
+    departement: req.body.departement,
+    promotion: req.body.promotion,
+    role: req.body.role,
+    mail: req.body.mail,
+    password: hashedPass,
+  });
 
-    const userdb = await User.findOne({ username: req.body.username });
-    if (userdb) {
-      req.flash("error_msg", "Ce nom d'utilisateur existe deja");
-      res.status(401).redirect("/auth/register");
-    } else {
-      const user = await newUser.save();
-      res.status(200).redirect("/auth/login");
-      // res.send("good register");
-    }
-  } catch (err) {
-    res.status(500).json(err);
-    console.log(err);
-    // res.send(err);
+  const userdb = await User.findOne({ username: req.body.username });
+  if (userdb) {
+    req.flash("error_msg", "Ce nom d'utilisateur existe deja");
+    res.status(401).redirect("/auth/register");
+  } else {
+    const user = await newUser.save();
+    res.status(200).redirect("/auth/login");
+    // res.send("good register");
   }
 });
 
@@ -71,7 +65,8 @@ router.post("/login", async (req, res) => {
       }
     }
   } catch (err) {
-    res.status(500).json(err);
+    req.flash("error_msg", "Nom d'utilisateur ou mot de passe incorrect");
+    res.status(400).redirect("/auth/login");
   }
 });
 
