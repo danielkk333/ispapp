@@ -23,6 +23,28 @@
 /*=================================
 	1. HEADER
 =================================*/
+@media only screen and (max-width:800px){
+	#mytables tbody, #mytables tr,#mytables td{
+	  display:block;
+	}
+	#mytables thead tr{
+	  position:absolute;
+	  top:-9999px;
+	  left:-9999px;
+	}
+	#mytables td{
+	  position: relative;
+	  padding-left: 50%;
+	}
+	#mytables td:before{
+		content:attr(data-title);
+		position: absolute;
+		left: 40px;
+		font-weight: bold;
+		text-transform: capitalize;
+	}
+
+  }
 .bg-fix {
     background-attachment: fixed;
 	background-size: cover;

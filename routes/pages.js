@@ -16,4 +16,8 @@ router.get("/revues", (req, res) => {
   res.render("pages/revues", { user: req.session.loggedin });
 });
 
+router.get("/chat", (req, res) => {
+  res.render("chat");
+});
+
 module.exports = router;
